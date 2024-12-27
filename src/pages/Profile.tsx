@@ -3,6 +3,13 @@ import { getUser } from '../utils/api';
 
 interface ProfileProps {}
 
+interface User {
+  id: string;
+  fullName: string;
+  email: string;
+  habits: string[];
+}
+
 const Profile: React.FC<ProfileProps> = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);

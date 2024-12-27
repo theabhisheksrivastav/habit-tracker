@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Habit {
+interface iHabit {
   id: string;
   name: string;
   description: string;
@@ -8,7 +8,7 @@ interface Habit {
 }
 
 interface HabitState {
-  habits: Habit[];
+  habits: iHabit[];
 }
 
 const initialState: HabitState = {
@@ -19,10 +19,10 @@ const habitSlice = createSlice({
   name: "habit",
   initialState,
   reducers: {
-    setHabits(state, action: PayloadAction<Habit[]>) {
+    setHabits(state, action: PayloadAction<iHabit[]>) {
       state.habits = action.payload;
     },
-    addHabit(state, action: PayloadAction<Habit>) {
+    addHabit(state, action: PayloadAction<iHabit>) {
       state.habits.push(action.payload);
     },
     removeHabit(state, action: PayloadAction<string>) {

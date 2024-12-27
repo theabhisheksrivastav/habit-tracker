@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppBar, Box, Toolbar, Typography, IconButton, MenuItem, Menu, Button } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../store/authSlice";

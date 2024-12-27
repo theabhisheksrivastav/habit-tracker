@@ -5,6 +5,10 @@ interface AuthState {
   accessToken: string | null;
   refreshToken: string | null;
 }
+interface User {
+  id: string;
+  email: string;
+}
 
 const initialState: AuthState = {
   user: JSON.parse(localStorage.getItem("user") || "null"),
@@ -16,7 +20,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setUser(state, action: PayloadAction<unknown>) {
+    setUser(state, action: PayloadAction<User>) {
       state.user = action.payload;
       // Persist to localStorage
       localStorage.setItem("user", JSON.stringify(action.payload));

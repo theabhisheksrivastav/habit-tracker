@@ -1,8 +1,14 @@
 import React from "react";
-import { IHabit } from "../types";
 
+
+interface iHabit {
+  _id: string;
+  name: string;
+  description: string;
+  timePeriod: number;
+}
 interface HabitCardProps {
-  habit: IHabit;
+  habit: iHabit;
   onDelete: (id: string) => void;
 }
 
